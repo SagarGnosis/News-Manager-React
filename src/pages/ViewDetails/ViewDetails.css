@@ -1,0 +1,131 @@
+.view-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.view-details-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.post-details img,
+.edit-form .image-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.post-details h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.post-details p,
+.edit-form textarea {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.post-details span,
+.edit-form input {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.post-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.post-details a:hover {
+  text-decoration: underline;
+}
+
+.edit-form input,
+.edit-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-group .btn-primary {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-group button:first-child {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.button-group button:last-child {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .view-details-container {
+    padding: 10px;
+  }
+
+  .post-details h2 {
+    font-size: 1.5em;
+  }
+
+  .post-details p,
+  .edit-form textarea,
+  .post-details span,
+  .edit-form input {
+    font-size: 1em;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,112 @@
+ .sidebar {
+  flex: .33;
+  width: 22rem;
+  background-color: #f7f7f7;
+  border-right: solid 1px #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.top {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #6439ff;
+}
+
+hr {
+  height: 0;
+  border: 0.5px solid rgb(230, 227, 227);
+}
+
+.center {
+  padding-left: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.center ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  font-size: 10px;
+  font-weight: bold;
+  color: #999;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #ece8ff;
+}
+
+.icon {
+  font-size: 18px;
+  color: #7451f8;
+}
+
+span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  margin-left: 10px;
+}
+
+.bottom {
+  align-items: center;
+  margin: 10px;
+  justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+
+/* Existing styles... */
+
+.toggleSidebarBtn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -22rem;
+    transition: left 0.3s;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .toggleSidebarBtn {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+}

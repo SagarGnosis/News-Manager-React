@@ -1,0 +1,148 @@
+:root {
+  --text-color: #555;
+  --background-color: #ffffff;
+  --border-color: rgb(231, 228, 228);
+  --icon-size: 20px;
+}
+
+.navbar {
+  height: 80px;
+  border-bottom: 0.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: flex-end;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border: 0.5px solid lightgray;
+  padding: 3px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-color);
+}
+
+.search input::placeholder {
+  font-size: 12px;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+}
+
+.icon {
+  font-size: var(--icon-size);
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .search {
+    width: 100%;
+    margin-bottom: 10px;
+    display: none;
+  }
+
+  .search.show {
+    display: flex;
+    justify-content: space-between;
+    padding: auto;
+    flex-direction: row;
+  }
+  .search.button {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #000;
+  }
+
+  .items {
+    width: 100%;
+    justify-content: space-around;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .items.show {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  .item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .search {
+  border-color: #333;
+}
+
+body.dark-mode .search input::placeholder {
+  color: #bbb;
+}
+
+body.dark-mode .items .icon {
+  color: #e0e0e0;
+}
+
