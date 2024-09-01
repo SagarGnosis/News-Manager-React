@@ -11,22 +11,28 @@ export const AuthContextProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("user")) || null
   );
 
-
   const login = async (inputs) => {
     try {
       const res = await axios.post(`${apiUrl}/api/auth/login`, inputs, {
-        withCredentials: true, // This ensures that the cookie with the JWT is included in the requests
+        withCredentials: true,
       });
+  
       const user = res.data;
+  
       setCurrentUser(user);
-      localStorage.setItem("user", JSON.stringify(user)); // Store entire user object
-      localStorage.setItem("token", user.token); // Assuming your backend includes the token in the user object
-      console.log("token :",user);
+      localStorage.setItem("user", JSON.stringify(user));
+  
+      if (user.token) {
+        localStorage.setItem("token", user.token); // Store the token
+        console.log("Token stored in frontend:", user.token);
+      } else {
+        console.error("No token found in the response");
+      }
     } catch (err) {
-      console.error(err);
-      // Optional: handle errors like showing a message to the user
+      console.error("Login error:", err);
     }
   };
+  
 
   const logout = async () => {
     try {
